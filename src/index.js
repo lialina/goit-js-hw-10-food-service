@@ -2,12 +2,10 @@ import menuItemsTpl from './menu-item.hbs';
 import menuItems from './menu.json';
 import './sass/main.scss';
 
-
 const menuListElement = document.querySelector(".js-menu");
 const menuMarkup = createMenuItemsMarkup(menuItems);
 
 menuListElement.insertAdjacentHTML('beforeend', menuMarkup);
-
 
 function createMenuItemsMarkup(menuItems) {
   return menuItemsTpl(menuItems);
@@ -22,17 +20,12 @@ const bodyElement = document.querySelector("body");
 bodyElement.classList.add("light-theme");
 
 const themeSwitchToggleCheckbox = document.querySelector("#theme-switch-toggle");
-
 themeSwitchToggleCheckbox.addEventListener('click', onCheckboxChange);
 themeSwitchToggleCheckbox.getAttribute('checked');
 
 let currentTheme;
 
 function onCheckboxChange(evt) {
-    // evt.preventDefault();
-
-    const target = evt.target;
-  
     bodyElement.classList.toggle("light-theme");
     bodyElement.classList.toggle("dark-theme");
   
